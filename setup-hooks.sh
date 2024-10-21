@@ -35,7 +35,7 @@ fi
 
 # Add GitLab remote if it doesn't exist
 if ! git remote | grep -q "gitlab"; then
-    git remote add gitlab https://gitlab.com/tobiashungwe/CCETT.git
+    git remote add gitlab git@gitlab.ti.howest.be:ti/2024-2025/s5/ccett/projects/group-21/documentation.git
     echo "GitLab remote added."
 fi
 
@@ -58,7 +58,7 @@ git submodule foreach '
     fi
 
     if ! git remote | grep -q "gitlab"; then
-        git remote add gitlab https://gitlab.com/tobiashungwe/$name.git
+        git remote add gitlab git@gitlab.ti.howest.be:ti/2024-2025/s5/ccett/projects/group-21/$name.git
         echo "Added GitLab remote for submodule $name."
     fi
 
