@@ -53,7 +53,7 @@ git submodule foreach '
     fi
 
     if ! git remote | grep -q "github"; then
-        git remote add github https://github.com/tobiashungwe/$name.git
+        git remote add github https://github.com/tobiashungwe/CCETT-$name.git
         echo "Added GitHub remote for submodule $name."
     fi
 
