@@ -1,0 +1,28 @@
+#!/bin/bash
+# Pre-push hook script to push to both GitHub and GitLab
+
+# Navigate to the documentation submodule
+cd documentation
+
+# Push to GitHub
+git push github dev
+
+# Check if the GitHub push was successful
+if [ $? -ne 0 ]; then
+    echo "Failed to push to GitHub"
+    exit 1
+fi
+
+# Push to GitLab
+git push gitlab dev
+
+# Check if the GitLab push was successful
+if [ $? -ne 0 ]; then
+    echo "Failed to push to GitLab"
+    exit 1
+fi
+
+# Go back to the root directory
+cd ..
+
+echo "Successfully pushed to both GitHub and GitLab"

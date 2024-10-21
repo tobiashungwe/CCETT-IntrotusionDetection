@@ -1,0 +1,10 @@
+#!/bin/bash
+# Post-checkout hook to install the pre-push hook for all developers
+
+# Copy the pre-push hook to the .git/hooks directory
+cp .githooks/pre-push .git/hooks/pre-push
+
+# Make it executable
+chmod +x .git/hooks/pre-push
+
+echo "Pre-push hook installed successfully."
