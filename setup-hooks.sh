@@ -7,6 +7,13 @@ if [ ! -d ".git" ]; then
     exit 1
 fi
 
+
+# Get the current working directory
+current_dir=$(pwd)
+
+# Add the current directory as a safe Git directory
+git config --global --add safe.directory "$current_dir"
+
 echo "Setting up Git hooks..."
 
 # Set the custom hooks path to use the .githooks directory
